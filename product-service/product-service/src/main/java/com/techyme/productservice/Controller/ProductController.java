@@ -1,0 +1,32 @@
+package com.techyme.productservice.Controller;
+
+
+import com.techyme.productservice.Service.ProductService;
+import com.techyme.productservice.dto.ProductRequest;
+import com.techyme.productservice.dto.ProductResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+//Contoller is used to add various endpoints that are required for that particular microservice
+@RestController
+@RequestMapping("/api/product")
+@RequiredArgsConstructor
+public class ProductController {
+
+    private final ProductService productService;
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createProduct(@RequestBody ProductRequest productRequest){
+
+        productService.createProduct(productRequest);
+
+    }
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProductResponse> getAllProducts(){
+        return productService.getAllProducts();
+    }
+}
