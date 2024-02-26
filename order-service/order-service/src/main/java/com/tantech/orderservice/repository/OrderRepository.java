@@ -4,4 +4,5 @@ import com.tantech.orderservice.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
+    //An interface that follows a particular structure for the sql table
 }
