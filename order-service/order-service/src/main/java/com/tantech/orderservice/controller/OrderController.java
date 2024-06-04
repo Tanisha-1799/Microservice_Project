@@ -17,8 +17,6 @@ public class OrderController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     //This will add a new record to the order database.
-
-
     //a service is created and instance is called here.
     public String placeOrder(@RequestBody OrderRequest orderRequest){
         orderService.placeOrder(orderRequest);
