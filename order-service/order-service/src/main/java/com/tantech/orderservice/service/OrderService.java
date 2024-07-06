@@ -24,7 +24,7 @@ public class OrderService {
     public void placeOrder(OrderRequest orderRequest){
         Order order = new Order();
         order.setOrderNumber(UUID.randomUUID().toString());
-        //Now mapping orderLineItems that comes from OrderRequest
+
 
         List<OrderLineItems> orderLineItems=orderRequest.getOrderLineItemsDtoList().stream()
                 .map(this::mapToDto)
